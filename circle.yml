@@ -4,8 +4,11 @@ machine:
 
 dependencies:
   override:
+    - pip install codecov
     - pip install -r requirements.txt
 
 test:
   override:
-    - python -m tests
+    - coverage run -m tests
+  post:
+    - codecov
