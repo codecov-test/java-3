@@ -1,5 +1,7 @@
 language: java
 before_install:
+    - sudo pip install codecov
     - do this
 after_success:
+    - codecov
     - do that
