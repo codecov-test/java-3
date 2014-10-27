@@ -4,8 +4,11 @@ machine:
 
 dependencies:
   override:
+    - sudo pip install codecov
     - pip install -r requirements.txt
 
 test:
   override:
     - python -m tests
+  post:
+    - codecov
